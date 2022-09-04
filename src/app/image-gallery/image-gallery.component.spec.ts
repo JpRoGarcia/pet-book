@@ -33,6 +33,17 @@ describe('ImageGalleryComponent', () => {
     expect(gallery).toBeTruthy();
   });
 
+  it('Debe mostrar todos los Boton en la Pantalla Principal', () => {
+    const btnElement = fixture.debugElement.queryAll(By.css('Button.btn'));
+    expect(btnElement.length).toEqual(3);
+  });
+
+  it('Debe mostrar todas las Imagenes en la Pantalla Principal', () => {
+    fixture.detectChanges();
+    const btnElement = fixture.debugElement.queryAll(By.css('.img'));
+    expect(btnElement.length).toEqual(5);
+  });
+
   it('Debe mostrar todas las Imagenes al tocar el Boton ALL', () => {
     const btnElement = fixture.debugElement.query(By.css('#All'));
     btnElement.nativeElement.click();
