@@ -4,7 +4,8 @@ export class ImageService {
     allImages = [];    
     
     getImages() {    
-        return this.allImages = Imagesdelatils.slice(0);    
+        this.allImages = Imagesdelatils.slice(0);
+        return this.allImages  
     }    
     
     getImage(id: number) {    
