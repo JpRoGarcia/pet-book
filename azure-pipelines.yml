@@ -17,4 +17,14 @@ steps:
     nnpm run build
   displayName: 'npm install, test and build'
   
-  
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarCloud'
+    organization: 'jprogarcia'
+    scannerMode: 'CLI'
+    configMode: 'file' 
+  displayName: 'run SonarCloud'
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
